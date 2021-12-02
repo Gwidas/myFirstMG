@@ -14,7 +14,7 @@ def mongo_connect(url):
         conn = pymongo.MongoClient(url)
         return conn
     except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to MongoDb: %s") % e
+        print("Could not connect to MongoDB: %s") % e
 
 
 def show_menu():
@@ -67,7 +67,7 @@ def add_record():
     }
 
     try:
-        coll.insert(new_doc)
+        coll.insert_one(new_doc)
         print("")
         print("Document inserted")
     except:
